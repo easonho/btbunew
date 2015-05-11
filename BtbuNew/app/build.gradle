@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.eason.btbu.new"
+        minSdkVersion 15
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+
+        debug{
+            resValue "string","host","http://www.btbu.edu.cn/"
+        }
+        release {
+            resValue "string","host","http://www.btbu.edu.cn/"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile project(':util')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile files('libs/volley.jar')
+    compile files('libs/universal-image-loader.jar')
+    compile files('libs/jsoup-1.7.2.jar')
+    compile files('libs/umeng-analytics-v5.4.2.jar')
+
+}
