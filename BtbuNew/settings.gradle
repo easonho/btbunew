@@ -1,6 +1,0 @@
-include ':app'
-
-
-include ":util"
-project(":util").projectDir = new File(settingsDir,"../util" )
-
